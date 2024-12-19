@@ -15,7 +15,8 @@
             <slot :current-page="currentPage">
               <!-- Fallback content for current page -->
               <div v-if="currentPage < pages.length">
-                <p>{{ pages[currentPage].text }}</p>
+                <div v-html="pages[currentPage].text"></div>
+                <!-- <p>{{ pages[currentPage].text }}</p> -->
                 <img
                   v-if="pages[currentPage].image"
                   :src="pages[currentPage].image"
@@ -96,7 +97,7 @@ export default {
   width: 300px;
   min-height: 350px;
   margin: 0px auto;
-  padding: 20px 30px;
+  padding: 40px 30px 20px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
   transition: all 0.3s ease;

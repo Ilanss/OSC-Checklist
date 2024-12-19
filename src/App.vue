@@ -35,6 +35,15 @@ h3 {
   margin-top: 0;
 }
 
+ol, ul {
+  text-align: left;
+  margin-top: 2rem;
+}
+
+li {
+  padding-bottom: 1rem;
+}
+
 p.subtitle {
   margin-top: .2rem;
   margin-bottom: 2rem;
