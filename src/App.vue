@@ -8,8 +8,13 @@ import CheckList from './components/Checklist.vue';
 export default {
   name: 'App',
   components: {
-    CheckList
-  }
+    CheckList,
+  },
+  data() {
+    return {
+      showProcessModal: false,
+    };
+  },
 }
 </script>
 
@@ -22,14 +27,32 @@ body {
   /* text-align: center; */
 }
 
+h1, .modal h3 {
+  margin-bottom: 0;
+}
+
+h3 {
+  margin-top: 0;
+}
+
+p.subtitle {
+  margin-top: .2rem;
+  margin-bottom: 2rem;
+}
+
 button {
   background: #3c53c7;
   padding: 1rem 2rem;
+  margin: 0 5px;
   border-radius: 50px;
   border: 0px solid;
   color: #ffffff;
   cursor: pointer;
   transition: .2s;
+}
+
+img {
+  border-radius: 8px;
 }
 
 button:hover {

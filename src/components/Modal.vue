@@ -1,40 +1,79 @@
 <template>
-    <transition name="modal">
-      <div class="modal-mask">
-        <div class="modal-wrapper" @click.self="$emit('close')">
-          <div class="modal-container">
-            <div class="modal-header">
-              <slot name="header">
-                default header
-              </slot>
-            </div>
-  
-            <div class="modal-body">
-              <slot name="body">
-                default body
-              </slot>
-            </div>
-  
-            <div class="modal-footer">
-              <slot name="footer">
-                default footer
-                <button class="modal-default-button" @click="$emit('close')">
-                  OK
-                </button>
-              </slot>
-            </div>
+  <transition name="modal">
+    <div class="modal-mask">
+      <div class="modal-wrapper" @click.self="closeModal">
+        <div class="modal-container">
+          <!-- Header -->
+          <div class="modal-header">
+            <slot name="header">
+              default header
+            </slot>
+          </div>
+
+          <!-- Body -->
+          <div class="modal-body">
+            <slot :current-page="currentPage">
+              <!-- Fallback content for current page -->
+              <div v-if="currentPage < pages.length">
+                <p>{{ pages[currentPage].text }}</p>
+                <img
+                  v-if="pages[currentPage].image"
+                  :src="pages[currentPage].image"
+                  alt="Page Content Image"
+                />
+              </div>
+            </slot>
+          </div>
+
+          <!-- Footer -->
+          <div class="modal-footer">
+            <slot name="footer" :current-page="currentPage" :total-pages="pages.length">
+              <button class="modal-default-button" @click="closeModal">
+                Close
+              </button>
+              <button
+                class="modal-next-button"
+                v-if="currentPage < pages.length - 1"
+                @click="goToNextPage"
+              >
+                Next
+              </button>
+            </slot>
           </div>
         </div>
       </div>
-    </transition>
-  </template>
+    </div>
+  </transition>
+</template>
   
-  <script>
-  export default {
-    name: "ModalItem",
-  };
-  </script>
-  
+<script>
+export default {
+  name: "ModalItem",
+  props: {
+    pages: {
+      type: Array,
+      required: true,
+    },
+  },
+  data() {
+    return {
+      currentPage: 0, // Track the current page
+    };
+  },
+  methods: {
+    goToNextPage() {
+      if (this.currentPage < this.pages.length - 1) {
+        this.currentPage++;
+      }
+    },
+    closeModal() {
+      this.$emit("close");
+      this.currentPage = 0; // Reset to the first page
+    },
+  },
+};
+</script>
+
   <style scoped>
   .modal-mask {
   position: fixed;
@@ -55,21 +94,26 @@
 
 .modal-container {
   width: 300px;
+  min-height: 350px;
   margin: 0px auto;
   padding: 20px 30px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
   transition: all 0.3s ease;
-  /* font-family: Helvetica, Arial, sans-serif; */
   text-align: center;
-}
 
+  /* Flexbox layout for header, body, and footer */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures footer stays at the bottom */
+}
 .modal-body {
-  margin: 20px 0;
+  /* margin: 20px 0; */
+  flex-grow: 1;
 }
 
-.modal-default-button {
-  float: right;
+.modal-footer {
+  margin-top: 1rem;
 }
 
 /*

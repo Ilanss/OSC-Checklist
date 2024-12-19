@@ -7,22 +7,16 @@
       </svg>
     </span>
     <span>{{ text }}</span>
-    <a v-if="infoMsg" href="#" @click="showModal = true">
+    <a v-if="pages.length" href="#" @click="showModal = true">
 
       <font-awesome-icon icon="fa-solid fa-info-circle" />
     </a>
   </label>
-  <Modal v-if="showModal" @close="showModal = false">
+ <Modal v-if="showModal" @close="showModal = false" :pages="pages">
     <template #header>
       <h3>{{ text }}</h3>
     </template>
-    <template #body>
-      <p>Custom Body Content</p>
-    </template>
-    <template #footer>
-      <button @click="showModal = false">OK</button>
-    </template>
-  </Modal>  
+  </Modal>
 </template>
 
 <script>
@@ -40,7 +34,10 @@ export default {
       type: Boolean,
       default: false
     },
-    infoMsg: String
+    pages: {
+      type: Array,
+      default: () => [],
+    },
   },
   data() {
     return {
@@ -170,6 +167,10 @@ export default {
 
 .inp-cbx:checked + .cbx a {
   opacity: .5;
+}
+
+img {
+  width: 100%;
 }
 
 @keyframes check {
