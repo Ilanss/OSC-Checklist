@@ -1,6 +1,6 @@
 'use strict'
 
-import { app, protocol, BrowserWindow } from 'electron'
+import { app, protocol, BrowserWindow, nativeTheme } from 'electron'
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import installExtension, { VUEJS3_DEVTOOLS } from 'electron-devtools-installer'
 const isDevelopment = process.env.NODE_ENV !== 'production'
@@ -13,8 +13,17 @@ protocol.registerSchemesAsPrivileged([
 async function createWindow() {
   // Create the browser window.
   const win = new BrowserWindow({
-    width: isDevelopment ? 1100 : 600,
+    width: 600,
     height: 800,
+    icon: "assets/icon.png",
+    titleBarStyle: 'hidden',
+    ...(process.platform !== 'darwin' ? { titleBarOverlay: true } : {}),
+    ...(process.platform == 'darwin' ? { titleBarStyle: 'customButtonsOnHover' } : {}),
+    titleBarOverlay: {
+      color: nativeTheme.shouldUseDarkColors ? '#202124' : '#ffffff', // Dynamic background color
+      symbolColor: nativeTheme.shouldUseDarkColors ? '#ffffff' : '#000000', // Dynamic symbol color
+      height: 30
+    },
     alwaysOnTop: true,
     webPreferences: {
       
@@ -24,6 +33,18 @@ async function createWindow() {
       contextIsolation: !process.env.ELECTRON_NODE_INTEGRATION
     }
   })
+
+  win.setMinimumSize(400, 700)
+
+  nativeTheme.on('updated', () => {
+    const isDarkMode = nativeTheme.shouldUseDarkColors;
+  
+    // Update titleBarOverlay dynamically
+    win.setTitleBarOverlay({
+      color: isDarkMode ? '#202124' : '#ffffff', // Update background color
+      symbolColor: isDarkMode ? '#ffffff' : '#000000', // Update symbol color
+    });
+  });
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
@@ -35,6 +56,8 @@ async function createWindow() {
     win.loadURL('app://./index.html')
   }
 }
+
+app.setName("OSC Checklist")
 
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {

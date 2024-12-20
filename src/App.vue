@@ -19,11 +19,21 @@ export default {
 </script>
 
 <style>
+html {
+  height:100%;
+}
+
 body {
   /* align-items: center; */
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
   padding: 1rem 2rem;
+  position:absolute; 
+  top:0; 
+  bottom:0; 
+  right:0; 
+  left:0;
+  -webkit-app-region: drag;
   /* text-align: center; */
 }
 
@@ -33,6 +43,10 @@ h1, .modal h3 {
 
 h3 {
   margin-top: 0;
+}
+
+label + h2 {
+  margin-top: calc(.83em + 15px);
 }
 
 ol, ul {
@@ -88,6 +102,7 @@ button:hover {
 @media (prefers-color-scheme: dark) {
   body { 
     color: #ffffff;
+    background-color: #202124;
   }
 }
 

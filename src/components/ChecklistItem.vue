@@ -59,13 +59,19 @@ export default {
   display: none;
 }
 
+label {
+  -webkit-app-region: no-drag;
+  width: fit-content;
+  padding-right: 10px;
+}
+
 .cbx {
   -webkit-user-select: none;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
   cursor: pointer;
   display: block;
-  padding-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .cbx span {
