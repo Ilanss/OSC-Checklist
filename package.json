@@ -34,6 +34,11 @@
     "eslint-plugin-vue": "^8.0.3",
     "vue-cli-plugin-electron-builder": "~2.1.1"
   },
+  "overrides": {
+    "vue-cli-plugin-electron-builder": {
+      "electron-builder": "^24.6.3"
+    }
+  },
   "eslintConfig": {
     "root": true,
     "env": {
