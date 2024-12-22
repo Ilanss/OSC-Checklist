@@ -11,6 +11,9 @@ module.exports = defineConfig({
           ],
           icon: "src/assets/icon.png",
         },
+        mac: {
+          icon: "src/assets/icon.icns",
+        },
         "nsis": {
           "installerIcon": "src/assets/icon.ico",
           "uninstallerIcon": "src/assets/icon.ico",

@@ -37,13 +37,15 @@ async function createWindow() {
   win.setMinimumSize(400, 700)
 
   nativeTheme.on('updated', () => {
-    const isDarkMode = nativeTheme.shouldUseDarkColors;
-  
-    // Update titleBarOverlay dynamically
-    win.setTitleBarOverlay({
-      color: isDarkMode ? '#202124' : '#ffffff', // Update background color
-      symbolColor: isDarkMode ? '#ffffff' : '#000000', // Update symbol color
-    });
+    if (process.platform !== 'darwin') {
+      const isDarkMode = nativeTheme.shouldUseDarkColors;
+      
+      // Update titleBarOverlay dynamically
+      win.setTitleBarOverlay({
+        color: isDarkMode ? '#202124' : '#ffffff', // Update background color
+        symbolColor: isDarkMode ? '#ffffff' : '#000000', // Update symbol color
+      });
+    }
   });
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
