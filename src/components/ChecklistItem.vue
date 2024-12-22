@@ -60,7 +60,7 @@ export default {
 }
 
 label {
-  -webkit-app-region: no-drag;
+  /* -webkit-app-region: no-drag; */
   width: fit-content;
   padding-right: 10px;
 }

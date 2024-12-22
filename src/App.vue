@@ -1,14 +1,14 @@
 <template>
-  <CheckList />
+  <RouterView />
 </template>
 
 <script>
-import CheckList from './components/Checklist.vue';
+// import CheckList from './components/Checklist.vue';
 
 export default {
   name: 'App',
   components: {
-    CheckList,
+    // CheckList,
   },
   data() {
     return {
@@ -33,17 +33,50 @@ body {
   bottom:0; 
   right:0; 
   left:0; */
-  -webkit-app-region: drag;
+  /* -webkit-app-region: drag; */
 }
 
 #app {
-  -webkit-app-region: no-drag;
-  width: fit-content;
-  padding-right: 5rem;
+  /* -webkit-app-region: no-drag; */
+  /* width: fit-content; */
+  /* padding-right: 5rem; */
 }
 
-h1, .subtitle {
+#main {
+  padding-top: 6rem;
+}
+
+.menu {
+  position: fixed;
+  z-index: 1;
+  width: 100vw;
+  top: 0;
+  left: 0;
   -webkit-app-region: drag;
+  /* box-shadow: 1px -10px 5px 10px rgba(0,0,0,0.75); */
+}
+
+html:not([data-scroll='0']) .menu {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  padding: 1rem 2.5rem 0rem;
+}
+
+.router {
+  position: absolute;
+  right: 2.5rem;
+  top: 4rem;
+  color: #ffffff;
+}
+
+/* h1, .subtitle {
+  -webkit-app-region: drag;
+} */
+
+.no-drag {
+  -webkit-app-region: no-drag;
 }
 
 h1, .modal h3 {
@@ -74,7 +107,7 @@ p.subtitle {
 
 button {
   background: #3c53c7;
-  padding: 1rem 2rem;
+  padding: .7rem 1.5rem;
   margin: 0 5px;
   border-radius: 50px;
   border: 0px solid;
@@ -103,6 +136,10 @@ button:hover {
     background-color: #ffffff;
   }
 
+  .menu {
+    background-color: #ffffff;
+  }
+  
   .svg-inline--fa {
     color: #00104B;
   }
@@ -113,6 +150,31 @@ button:hover {
     color: #ffffff;
     background-color: #202124;
   }
+
+  .menu {
+    background-color: #202124;
+  }
 }
 
+.menu {
+  animation-name: shadowFadeIn;
+  animation-duration: 1s; /* Duration won't affect scroll-timeline sync */
+  animation-timeline: scroll();
+  animation-timeline-name: headerScroll;
+  animation-range: 0% 20%; /* Shadow will fully appear by 20% scroll */
+}
+
+@scroll-timeline headerScroll {
+  source: auto;
+  orientation: block;
+}
+
+@keyframes shadowFadeIn {
+  0% {
+    box-shadow: none;
+  }
+  100% {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+}
 </style>

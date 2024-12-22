@@ -1,45 +1,53 @@
 <template>
-  <h1>OSC Checklist</h1>
-  <p class="subtitle">Ou comment lancer un stream de A à Z</p>
+  <div class="menu">
+    <div class="title">
+      <h1>OSC Checklist</h1>
+      <p class="subtitle">Ou comment lancer un stream de A à Z</p>
+    </div>
+    <RouterLink to="/guides" class="router no-drag"><font-awesome-icon icon="fa-solid fa-route" size="lg" /></RouterLink>
+  </div>
 
-  <h2>1. Ordinateur</h2>
-  <ChecklistItem idItem="power" text="Allumer la multiprise" :isChecked=true />
-  <ChecklistItem idItem="computer_booted" text="Allumer l'ordi" :isChecked=true :pages="pagesForPower" />
-  <ChecklistItem idItem="open_session" text="Se connecter à la session OSC" :isChecked=true :pages="pagesForSession" />
-  <ChecklistItem idItem="obs_opened" text="Ouvrir OBS" :isChecked=false :pages="pagesForObsOpened" />
-  <ChecklistItem idItem="spotify_opened" text="Ouvrir Spotify" :isChecked=false :pages="pagesForSpotifyOpened" />
+  <div id="main">
+    <h2>1. Ordinateur</h2>
+    <ChecklistItem idItem="power" text="Allumer la multiprise" :isChecked=true />
+    <ChecklistItem idItem="computer_booted" text="Allumer l'ordi" :isChecked=true :pages="pagesForPower" />
+    <ChecklistItem idItem="open_session" text="Se connecter à la session OSC" :isChecked=true :pages="pagesForSession" />
+    <ChecklistItem idItem="obs_opened" text="Ouvrir OBS" :isChecked=false :pages="pagesForObsOpened" />
+    <ChecklistItem idItem="spotify_opened" text="Ouvrir Spotify" :isChecked=false :pages="pagesForSpotifyOpened" />
 
-  <h2>2. Caméras</h2>
-  <ChecklistItem idItem="camera_placement" text="Placer les caméras" :isChecked=false :pages="pagesForCameraPlacement" />
-  <ChecklistItem idItem="camera_on" text="Allumer les caméras Sony" :isChecked=false :pages="pagesForCameraOn" />
-  <ChecklistItem idItem="camera_top" text="Caméra plafond" :isChecked=false :pages="pagesForCameraTop" />
-  <ChecklistItem idItem="camera_other" text="Autres caméras" :isChecked=false :pages="pagesForCameraOther" />
-  
-  <h2>3. Lumière</h2>
-  <ChecklistItem idItem="light_placement" text="Placer les lumière" :isChecked=true :pages="pagesForLightPlacement" />
-  <ChecklistItem idItem="light_on" text="Allumer les lumières" :isChecked=false :pages="pagesForLightOn" />
-  
-  <h2>4. OBS</h2>
-  <ChecklistItem idItem="obs_title" text="Changer le titre du stream" :isChecked=false :pages="pagesForObsTitle" />
-  <ChecklistItem idItem="obs_category" text="Changer la catégorie du stream" :isChecked=false :pages="pagesForObsCategory" />
-  <ChecklistItem idItem="obs_welcome" text="Changer le text d'accueil" :isChecked=false :pages="pagesForObsWelcome" />
-  
-  <h2>5. Lancer le stream</h2>
-  <ChecklistItem idItem="timer_start" text="Lancer timer" :isChecked=false :pages="pagesForTimerStart" />
-  <ChecklistItem idItem="music_start" text="Lancer musique" :isChecked=false :pages="pagesForMusicStart" />
-  <ChecklistItem idItem="stream_start" text="Démarer le stream" :isChecked=false :pages="pagesForStreamStart" />
+    <h2>2. Caméras</h2>
+    <ChecklistItem idItem="camera_placement" text="Placer les caméras" :isChecked=false :pages="pagesForCameraPlacement" />
+    <ChecklistItem idItem="camera_on" text="Allumer les caméras Sony" :isChecked=false :pages="pagesForCameraOn" />
+    <ChecklistItem idItem="camera_top" text="Caméra plafond" :isChecked=false :pages="pagesForCameraTop" />
+    <ChecklistItem idItem="camera_other" text="Autres caméras" :isChecked=false :pages="pagesForCameraOther" />
+    
+    <h2>3. Lumière</h2>
+    <ChecklistItem idItem="light_placement" text="Placer les lumière" :isChecked=true :pages="pagesForLightPlacement" />
+    <ChecklistItem idItem="light_on" text="Allumer les lumières" :isChecked=false :pages="pagesForLightOn" />
+    
+    <h2>4. OBS</h2>
+    <ChecklistItem idItem="obs_title" text="Changer le titre du stream" :isChecked=false :pages="pagesForObsTitle" />
+    <ChecklistItem idItem="obs_category" text="Changer la catégorie du stream" :isChecked=false :pages="pagesForObsCategory" />
+    <ChecklistItem idItem="obs_welcome" text="Changer le text d'accueil" :isChecked=false :pages="pagesForObsWelcome" />
+    
+    <h2>5. Lancer le stream</h2>
+    <ChecklistItem idItem="timer_start" text="Lancer timer" :isChecked=false :pages="pagesForTimerStart" />
+    <ChecklistItem idItem="music_start" text="Lancer musique" :isChecked=false :pages="pagesForMusicStart" />
+    <ChecklistItem idItem="stream_start" text="Démarer le stream" :isChecked=false :pages="pagesForStreamStart" />
 
-  <h2>6. Pendant le stream</h2>
-  <ChecklistItem idItem="scene_choice" text="Choix de scène" :isChecked=false :pages="pagesForSceneChoice" />
-  <ChecklistItem idItem="camera_change" text="Choix de caméra" :isChecked=false :pages="pagesForCameraChange" />
+    <h2>6. Pendant le stream</h2>
+    <ChecklistItem idItem="scene_choice" text="Choix de scène" :isChecked=false :pages="pagesForSceneChoice" />
+    <ChecklistItem idItem="camera_change" text="Choix de caméra" :isChecked=false :pages="pagesForCameraChange" />
 
-  <h2>7. Arrêter le stream</h2>
-  <ChecklistItem idItem="scene_end" text="Scène de fin" :isChecked=false :pages="pagesForSceneEnd" />
-  <ChecklistItem idItem="stream_stop" text="Arrêter le stream" :isChecked=false :pages="pagesForStreamStop" />
-  <ChecklistItem idItem="vod_youtube" text="Publier la VOD sur Youtube" :isChecked=false :pages="pagesForVodYoutube" />
+    <h2>7. Arrêter le stream</h2>
+    <ChecklistItem idItem="scene_end" text="Scène de fin" :isChecked=false :pages="pagesForSceneEnd" />
+    <ChecklistItem idItem="stream_stop" text="Arrêter le stream" :isChecked=false :pages="pagesForStreamStop" />
+    <ChecklistItem idItem="vod_youtube" text="Publier la VOD sur Youtube" :isChecked=false :pages="pagesForVodYoutube" />
+  </div>
 </template>
 
 <script>
+import { RouterLink } from 'vue-router';
 import ChecklistItem from './ChecklistItem.vue';
 
 export default {
@@ -48,7 +56,8 @@ export default {
     msg: String
   },
   components: {
-    ChecklistItem
+    ChecklistItem,
+    RouterLink
   },
   data() {
     return {
