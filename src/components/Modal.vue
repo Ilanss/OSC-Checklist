@@ -87,6 +87,7 @@ export default {
   display: table;
   transition: opacity 0.3s ease;
   -webkit-app-region: no-drag;
+  pointer-events: auto; /* Ensure these areas behave as usual */
 }
 
 .modal-wrapper {

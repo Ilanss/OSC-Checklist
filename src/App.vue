@@ -28,13 +28,22 @@ body {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
   padding: 1rem 2rem;
-  position:absolute; 
+  /* position:absolute; 
   top:0; 
   bottom:0; 
   right:0; 
-  left:0;
+  left:0; */
   -webkit-app-region: drag;
-  /* text-align: center; */
+}
+
+#app {
+  -webkit-app-region: no-drag;
+  width: fit-content;
+  padding-right: 5rem;
+}
+
+h1, .subtitle {
+  -webkit-app-region: drag;
 }
 
 h1, .modal h3 {

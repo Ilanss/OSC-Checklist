@@ -1,18 +1,41 @@
 <template>
   <h1>OSC Checklist</h1>
   <p class="subtitle">Ou comment lancer un stream de A à Z</p>
-  <!-- <fieldset> -->
-    <h2>Ordinateur</h2>
-    <ChecklistItem idItem="power" text="Allumer la multiprise" :isChecked=true />
-    <ChecklistItem idItem="computer_booted" text="Allumer l'ordi" :isChecked=true :pages="pagesForPower" />
-    <ChecklistItem idItem="open_session" text="Se connecter à la session OSC" :isChecked=true :pages="pagesForSession" />
-    <ChecklistItem idItem="obs_opened" text="Ouvrir OBS" :isChecked=false :pages="pagesForObsOpened" />
-    <!-- <hr> -->
-    <h2>Caméras</h2>
-    <ChecklistItem idItem="camera_placement" text="Placer les caméras" :isChecked=false :pages="pagesForCameraPlacement" />
-    <ChecklistItem idItem="camera_on" text="Allumer les caméras" :isChecked=false />
-    <!-- <hr> -->
-  <!-- </fieldset> -->
+
+  <h2>Ordinateur</h2>
+  <ChecklistItem idItem="power" text="Allumer la multiprise" :isChecked=true />
+  <ChecklistItem idItem="computer_booted" text="Allumer l'ordi" :isChecked=true :pages="pagesForPower" />
+  <ChecklistItem idItem="open_session" text="Se connecter à la session OSC" :isChecked=true :pages="pagesForSession" />
+  <ChecklistItem idItem="obs_opened" text="Ouvrir OBS" :isChecked=false :pages="pagesForObsOpened" />
+
+  <h2>Caméras</h2>
+  <ChecklistItem idItem="camera_placement" text="Placer les caméras" :isChecked=false :pages="pagesForCameraPlacement" />
+  <ChecklistItem idItem="camera_on" text="Allumer les caméras Sony" :isChecked=false />
+  <ChecklistItem idItem="camera_top" text="Caméra plafond" :isChecked=false />
+  <ChecklistItem idItem="camera_other" text="Autres caméras" :isChecked=false />
+  
+  <h2>Lumière</h2>
+  <ChecklistItem idItem="light_placement" text="Placer les lumière" :isChecked=true />
+  <ChecklistItem idItem="light_on" text="Allumer les lumières" :isChecked=false />
+  
+  <h2>OBS</h2>
+  <ChecklistItem idItem="obs_title" text="Changer le titre du stream" :isChecked=false />
+  <ChecklistItem idItem="obs_category" text="Changer la catégorie du stream" :isChecked=false />
+  <ChecklistItem idItem="obs_welcome" text="Changer le text d'accueil" :isChecked=false />
+  
+  <h2>Lancer le stream</h2>
+  <ChecklistItem idItem="timer_start" text="Lancer timer" :isChecked=false />
+  <ChecklistItem idItem="music_start" text="Lancer musique" :isChecked=false />
+  <ChecklistItem idItem="stream_start" text="Démarer le stream" :isChecked=false />
+
+  <h2>Pendant le stream</h2>
+  <ChecklistItem idItem="scene_choice" text="Choix de scène" :isChecked=false />
+  <ChecklistItem idItem="camera_change" text="Choix de caméra" :isChecked=false />
+
+  <h2>Arrêter le stream</h2>
+  <ChecklistItem idItem="scene_end" text="Scène de fin" :isChecked=false />
+  <ChecklistItem idItem="stream_stop" text="Arrêter le stream" :isChecked=false />
+  <ChecklistItem idItem="vod_youtube" text="Publier la VOD sur Youtube" :isChecked=false />
 </template>
 
 <script>
@@ -65,12 +88,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  fieldset {
-    border: 1px solid grey;
-  }
-  
-  hr {
-    border: 1px solid grey;
-    width: 50%;
-  }
 </style>
