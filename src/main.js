@@ -12,6 +12,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import Checklist from './components/Checklist.vue'
 import GuidesView from './components/GuidesView.vue'
+import AudioMixer from './components/guides/AudioMixer.vue'
 
 // Add icons to the library
 library.add(fas)
@@ -19,6 +20,7 @@ library.add(fas)
 const routes = [
     { path: '/', component: Checklist },
     { path: '/guides', component: GuidesView },
+    { path: '/guides/livetrack', component: AudioMixer },
   ]
 
 const router = createRouter({

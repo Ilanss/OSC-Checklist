@@ -43,7 +43,11 @@ body {
 }
 
 #main {
-  padding-top: 6rem;
+  padding-top: 7rem;
+}
+
+#main > h2:first-child {
+  margin-top: 0;
 }
 
 .menu {

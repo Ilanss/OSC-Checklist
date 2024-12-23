@@ -1,11 +1,5 @@
 <template>
-  <div class="menu">
-    <div class="title">
-      <h1>OSC Checklist</h1>
-      <p class="subtitle">Ou comment lancer un stream de A à Z</p>
-    </div>
-    <RouterLink to="/guides" class="router no-drag"><font-awesome-icon icon="fa-solid fa-route" size="lg" /></RouterLink>
-  </div>
+  <MenuBar title="OSC Checklist" subtitle="Ou comment lancer un stream de A à Z" icon="route" link="/guides"></MenuBar>
 
   <div id="main">
     <h2>1. Ordinateur</h2>
@@ -47,8 +41,8 @@
 </template>
 
 <script>
-import { RouterLink } from 'vue-router';
 import ChecklistItem from './ChecklistItem.vue';
+import MenuBar from './MenuBar.vue';
 
 export default {
   name: 'CheckList',
@@ -57,7 +51,7 @@ export default {
   },
   components: {
     ChecklistItem,
-    RouterLink
+    MenuBar
   },
   data() {
     return {
