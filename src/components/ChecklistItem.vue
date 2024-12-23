@@ -127,6 +127,7 @@ label {
 .cbx a {
   margin-left: 8px;
   color: #ffffff;
+  vertical-align: -2px;
 }
 
 .cbx span:last-of-type:after {

@@ -97,7 +97,7 @@ export default {
 
 .modal-container {
   width: 300px;
-  min-height: 350px;
+  min-height: 400px;
   margin: 0px auto;
   padding: 40px 30px 20px;
   border-radius: 8px;

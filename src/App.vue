@@ -105,6 +105,14 @@ p.subtitle {
   margin-bottom: 2rem;
 }
 
+code {
+  font-size: .7em;
+  background-color: #202124;
+  padding: 4px 8px;
+  border-radius: 4px;
+  vertical-align: .15em;
+}
+
 button {
   background: #3c53c7;
   padding: .7rem 1.5rem;
@@ -118,6 +126,7 @@ button {
 
 img {
   border-radius: 8px;
+  width: 100%;
 }
 
 button:hover {
@@ -138,6 +147,10 @@ button:hover {
 
   .menu {
     background-color: #ffffff;
+  }
+
+  code {
+    color: #ffffff;
   }
   
   .svg-inline--fa {

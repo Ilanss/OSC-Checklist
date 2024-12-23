@@ -9,10 +9,10 @@
 
   <div id="main">
     <h2>1. Ordinateur</h2>
-    <ChecklistItem idItem="power" text="Allumer la multiprise" :isChecked=true />
-    <ChecklistItem idItem="computer_booted" text="Allumer l'ordi" :isChecked=true :pages="pagesForPower" />
+    <ChecklistItem idItem="power" text="Allumer l'alimentation générale" :isChecked=true :pages="pagesForPower" />
+    <ChecklistItem idItem="computer_booted" text="Allumer l'ordi" :isChecked=true :pages="pagesForComputerBooted" />
     <ChecklistItem idItem="open_session" text="Se connecter à la session OSC" :isChecked=true :pages="pagesForSession" />
-    <ChecklistItem idItem="obs_opened" text="Ouvrir OBS" :isChecked=false :pages="pagesForObsOpened" />
+    <ChecklistItem idItem="obs_opened" text="Ouvrir OBS" :isChecked=false />
     <ChecklistItem idItem="spotify_opened" text="Ouvrir Spotify" :isChecked=false :pages="pagesForSpotifyOpened" />
 
     <h2>2. Caméras</h2>
@@ -31,9 +31,9 @@
     <ChecklistItem idItem="obs_welcome" text="Changer le text d'accueil" :isChecked=false :pages="pagesForObsWelcome" />
     
     <h2>5. Lancer le stream</h2>
-    <ChecklistItem idItem="timer_start" text="Lancer timer" :isChecked=false :pages="pagesForTimerStart" />
-    <ChecklistItem idItem="music_start" text="Lancer musique" :isChecked=false :pages="pagesForMusicStart" />
-    <ChecklistItem idItem="stream_start" text="Démarer le stream" :isChecked=false :pages="pagesForStreamStart" />
+    <ChecklistItem idItem="timer_start" text="Lancer le compte à rebours" :isChecked=false :pages="pagesForTimerStart" />
+    <ChecklistItem idItem="music_start" text="Lancer la musique" :isChecked=false :pages="pagesForMusicStart" />
+    <ChecklistItem idItem="stream_start" text="Démarrer le stream" :isChecked=false :pages="pagesForStreamStart" />
 
     <h2>6. Pendant le stream</h2>
     <ChecklistItem idItem="scene_choice" text="Choix de scène" :isChecked=false :pages="pagesForSceneChoice" />
@@ -63,33 +63,40 @@ export default {
     return {
       // Define different pages for each checklist item
       pagesForPower: [
-        { text: "<p>Plug in the power strip</p>", image: "https://via.placeholder.com/150" },
-        { text: "<p>Ensure all devices are connected</p>" },
+        { text: "<p>La multiprise se trouve derrière l'ordinateur</p>", image: require('@/assets/img/powerstrip.jpeg') },
+        { text: "<p>Pour accéder au bouton: <br>enlever momentanément la prise de la table de mixage</p>" },
       ],
       pagesForComputerBooted: [
-        { text: "<p>Press the power button on the computer</p>" },
-        { text: "<p>Wait for the boot sequence to complete</p>" },
+        { text: "<p>Le bouton se trouve en haut au milieu de la façade avant</p>" },
       ],
       pagesForSession: [
-        { text: `
-            <p>Open OBS by performing the following steps:</p>
-            <ol>
-              <li>Locate the shortcut on the desktop.</li>
-              <li>Double-click the shortcut.</li>
-            </ol>
-          `},
+        { text: `<p>Mot de passe de la session: OSC1337</p>`},
       ],
-      pagesForObsOpened: [
-        { text: "<p>Locate the OBS shortcut</p>" },
-        { text: "<p>Double-click to open the software</p>" },
+      pagesForSpotifyOpened: [
+        { text: `<p>N'utiliser <b>que</b> Spotify pour la musique. Le son sera coupé sur la VOD</p>`},
       ],
       pagesForCameraPlacement: [
-        { text: "<p>Les emplacement possible sont marqué par des scotch de couleur sur les barres au plafond</p>" },
-        { text: "<p>Choisir un emplacement, décrocher les câbles correspondant, les brancher à la caméra</p>" },
+        { text: "<p>Les emplacement possible sont marqué par des scotch de couleur sur les barres au plafond</p>", image: require('@/assets/img/IMG_2299.jpeg') },
+        { text: "<p>Choisir un emplacement, décrocher les câbles correspondant</p>", image: require('@/assets/img/IMG_2300.jpeg') },
+        { text: "<p>Brancher les câbles</p>", image: require('@/assets/img/IMG_2309.jpeg') },
       ],
       pagesForCameraOn: [
-        { text: "<p>Power on each camera</p>" },
-        { text: "<p>Verify the feed in the monitor</p>" },
+        { text: "<p>Allumer les caméras en ouvrant l'écran</p>", image: require('@/assets/img/IMG_2303.jpeg') },
+        { text: "<p>Appuyer sur <code>enter</code> plusieurs fois si l'affichage montre le choix date/heure.</p>", image: require('@/assets/img/IMG_2305.jpeg') },
+      ],
+      pagesForCameraTop: [
+        { text: "<p>Allumer la caméra</p>", image: require('@/assets/img/camera_top_power.jpeg') },
+        { text: "<p>Placer la caméra grâce au bras magique</p>" },
+        { text: "<p>Ouvrir le cache et déverouiller l'objectif</p>", image: require('@/assets/img/camera_top_lens.jpeg') },
+      ],
+      pagesForCameraOther: [
+        { text: "<p>Un câble mini HDMI avec un raccord pré-installé est disponible sous la table de régie au besoin.</p>", image: require('@/assets/img/cable_mini_hdmi.jpeg') },
+      ],
+      pagesForStreamStart: [
+        { text: "<p>Un câble mini HDMI avec un raccord pré-installé est disponible sous la table de régie au besoin.</p>", image: require('@/assets/img/streamdeck_tools.png') },
+      ],
+      pagesForSceneChoice: [
+        { text: "<p>Utiliser le Streamdeck pour changer de scène.</p>", image: require('@/assets/img/streamdeck_home.png') },
       ],
     };
   },
