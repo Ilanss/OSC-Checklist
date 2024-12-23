@@ -7,6 +7,7 @@ module.exports = defineConfig({
         productName: "OSC Checklist",
         win: {
           "target": [
+            "portable",
             "nsis"
           ],
           icon: "src/assets/icon.png",
