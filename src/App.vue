@@ -71,7 +71,7 @@ html:not([data-scroll='0']) .menu {
 .router {
   position: absolute;
   right: 2.5rem;
-  top: 4rem;
+  top: 3.5rem;
   color: #ffffff;
 }
 
@@ -109,12 +109,17 @@ p.subtitle {
   margin-bottom: 2rem;
 }
 
+a {
+  color: #fff;
+  /* text-decoration: none; */
+}
+
 code {
   font-size: .7em;
-  background-color: #202124;
+  background-color: #404247;
   padding: 4px 8px;
   border-radius: 4px;
-  vertical-align: .15em;
+  vertical-align: .2em;
 }
 
 button {
@@ -137,6 +142,10 @@ button:hover {
   box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 }
 
+.guide img {
+  margin-bottom: 2rem;
+}
+
 /* h2 {
   font-style: italic;
   font-weight: 400;
@@ -156,10 +165,23 @@ button:hover {
   code {
     color: #ffffff;
   }
+
+  a {
+    color: #202124;
+  }
   
   .svg-inline--fa {
     color: #00104B;
   }
+  
+  .warning {
+    background-color: #fff3cd;
+    border: 1px solid #ffe69c;
+    color: #664d03;
+    padding: 1.5rem;
+    border-radius: 4px;
+  }
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -171,6 +193,15 @@ button:hover {
   .menu {
     background-color: #202124;
   }
+
+  .warning {
+    background-color: #332701;
+    border: 1px solid #997404;
+    color: #ffda6a;
+    padding: 1.5rem;
+    border-radius: 4px;
+  }
+
 }
 
 .menu {

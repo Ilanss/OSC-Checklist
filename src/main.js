@@ -13,6 +13,8 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 import Checklist from './components/Checklist.vue'
 import GuidesView from './components/GuidesView.vue'
 import AudioMixer from './components/guides/AudioMixer.vue'
+import MicGuide from './components/guides/MicGuide.vue'
+import StreamdeckGuide from './components/guides/StreamdeckGuide.vue'
 
 // Add icons to the library
 library.add(fas)
@@ -21,6 +23,8 @@ const routes = [
     { path: '/', component: Checklist },
     { path: '/guides', component: GuidesView },
     { path: '/guides/livetrack', component: AudioMixer },
+    { path: '/guides/mic', component: MicGuide },
+    { path: '/guides/streamdeck', component: StreamdeckGuide },
   ]
 
 const router = createRouter({
