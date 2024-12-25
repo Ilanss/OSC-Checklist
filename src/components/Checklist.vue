@@ -87,10 +87,10 @@ export default {
         { text: "<p>Un câble mini HDMI avec un raccord pré-installé est disponible sous la table de régie au besoin.</p>", image: require('@/assets/img/cable_mini_hdmi.jpeg') },
       ],
       pagesForStreamStart: [
-        { text: "<p>Un câble mini HDMI avec un raccord pré-installé est disponible sous la table de régie au besoin.</p>", image: require('@/assets/img/streamdeck_tools.png') },
+        { text: "<p>Soit avec le bouton <code>Start live</code> sur le Streamdeck ou avec le bouton <code>Démarrer le stream</code> sur OBS</p>", image: require('@/assets/img/streamdeck_tools.png') },
       ],
       pagesForSceneChoice: [
-        { text: "<p>Utiliser le Streamdeck pour changer de scène.</p>", image: require('@/assets/img/streamdeck_home.png') },
+        { text: "<p>Utiliser le Streamdeck pour changer de scène.</p>", image: require('@/assets/img/streamdeck_scene.png') },
       ],
     };
   },
