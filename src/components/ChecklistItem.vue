@@ -43,11 +43,23 @@ export default {
     return {
       checked: this.isChecked, // Sync local reactive state with the prop
       showModal: false,
+      scrollY: 0,
     };
   },
   watch: {
     isChecked(newVal) {
       this.checked = newVal; // Update local state if prop changes
+    },
+    showModal(newValue) {
+      if (newValue) {
+        this.scrollY = window.scrollY; // Save the current scroll position
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${this.scrollY}px`;
+      } else {
+        document.body.style.position = '';
+        document.body.style.top = '';
+        window.scrollTo(0, this.scrollY); // Restore the scroll position
+      }
     },
   },
 }

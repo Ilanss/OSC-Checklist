@@ -13,7 +13,7 @@ protocol.registerSchemesAsPrivileged([
 async function createWindow() {
   // Create the browser window.
   const win = new BrowserWindow({
-    width: 600,
+    width: (isDevelopment && process.platform == 'darwin') ? 1000 : 600,
     height: 800,
     icon: "assets/icon.png",
     titleBarStyle: 'hidden',

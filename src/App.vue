@@ -36,6 +36,10 @@ body {
   /* -webkit-app-region: drag; */
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 #app {
   /* -webkit-app-region: no-drag; */
   /* width: fit-content; */
@@ -91,7 +95,7 @@ h3 {
   margin-top: 0;
 }
 
-label + h2 {
+label + h2, .modal-mask + h2 {
   margin-top: calc(.83em + 15px);
 }
 
