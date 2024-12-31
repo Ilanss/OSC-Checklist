@@ -18,7 +18,15 @@ module.exports = defineConfig({
         "nsis": {
           "installerIcon": "src/assets/icon.ico",
           "uninstallerIcon": "src/assets/icon.ico",
-        }
+        },
+        publish: [
+          {
+            provider: "github",
+            owner: "Ilanss",
+            private: false,
+            repo: "OSC-Checklist"
+          }
+        ]
       }
     }
   }
