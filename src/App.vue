@@ -115,7 +115,10 @@ p.subtitle {
 
 a {
   color: #fff;
-  /* text-decoration: none; */
+}
+
+button a {
+  text-decoration: none;
 }
 
 code {

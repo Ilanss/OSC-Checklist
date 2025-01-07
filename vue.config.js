@@ -11,6 +11,7 @@ module.exports = defineConfig({
             "nsis"
           ],
           icon: "src/assets/icon.png",
+          publish: ["github"]
         },
         mac: {
           icon: "src/assets/icon.icns",

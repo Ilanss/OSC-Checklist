@@ -14,8 +14,9 @@
       <ol>
         <li>Appuyer sur le bouton <code>recall</code></li>
         <li>Appuyer sur le bouton 5</li>
-        <li>Aligner les faders sur les lumières qui se sont allumées</li>
+        <li>Des faders virtuels s'allument et prennent le pas sur les versions physique</li>
       </ol>
+    <p>Pour ajuster ou reprendre la main: aligner les faders sur les lumières qui se sont allumées</p>
     <img src="../../assets/img/livetrack_recall.jpeg" alt="">
   </div>
 </template>

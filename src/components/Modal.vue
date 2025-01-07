@@ -29,6 +29,10 @@
           <!-- Footer -->
           <div class="modal-footer">
             <slot name="footer" :current-page="currentPage" :total-pages="pages.length">
+              <button v-if="pages[currentPage].link">
+                <RouterLink :to="pages[currentPage].link" @click="closeModal">Voir le guide</RouterLink>
+              </button>
+
               <button class="modal-default-button" @click="closeModal">
                 Close
               </button>

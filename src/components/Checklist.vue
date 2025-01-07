@@ -19,24 +19,30 @@
     <ChecklistItem idItem="light_placement" text="Placer les lumière" :isChecked=true :pages="pagesForLightPlacement" />
     <ChecklistItem idItem="light_on" text="Allumer les lumières" :isChecked=false :pages="pagesForLightOn" />
     
-    <h2>4. OBS</h2>
+    <h2>4. Micros</h2>
+    <ChecklistItem idItem="mic_quipe" text="Equiper les micro" :isChecked=false :pages="pagesForMicEquip" />
+    <ChecklistItem idItem="receiver_power" text="Brancher les récepteur" :isChecked=false :pages="pagesForReceiverPower" />
+    <ChecklistItem idItem="mix_power" text="Allumer la table de mix" :isChecked=false :pages="pagesForMixPower" />
+    <ChecklistItem idItem="mic_power" text="Allumer les micros" :isChecked=false :pages="pagesForMicPower" />
+    
+    <h2>5. OBS</h2>
     <ChecklistItem idItem="obs_title" text="Changer le titre du stream" :isChecked=false :pages="pagesForObsTitle" />
     <ChecklistItem idItem="obs_category" text="Changer la catégorie du stream" :isChecked=false :pages="pagesForObsCategory" />
     <ChecklistItem idItem="obs_welcome" text="Changer le text d'accueil" :isChecked=false :pages="pagesForObsWelcome" />
     
-    <h2>5. Lancer le stream</h2>
+    <h2>6. Lancer le stream</h2>
     <ChecklistItem idItem="timer_start" text="Lancer le compte à rebours" :isChecked=false :pages="pagesForTimerStart" />
     <ChecklistItem idItem="music_start" text="Lancer la musique" :isChecked=false :pages="pagesForMusicStart" />
     <ChecklistItem idItem="stream_start" text="Démarrer le stream" :isChecked=false :pages="pagesForStreamStart" />
 
-    <h2>6. Pendant le stream</h2>
+    <h2>7. Pendant le stream</h2>
     <ChecklistItem idItem="scene_choice" text="Choix de scène" :isChecked=false :pages="pagesForSceneChoice" />
     <ChecklistItem idItem="camera_change" text="Choix de caméra" :isChecked=false :pages="pagesForCameraChange" />
 
-    <h2>7. Arrêter le stream</h2>
+    <h2>8. Arrêter le stream</h2>
     <ChecklistItem idItem="scene_end" text="Scène de fin" :isChecked=false :pages="pagesForSceneEnd" />
     <ChecklistItem idItem="stream_stop" text="Arrêter le stream" :isChecked=false :pages="pagesForStreamStop" />
-    <ChecklistItem idItem="vod_youtube" text="Publier la VOD sur Youtube" :isChecked=false :pages="pagesForVodYoutube" />
+    <!-- <ChecklistItem idItem="vod_youtube" text="Publier la VOD sur Youtube" :isChecked=false :pages="pagesForVodYoutube" /> -->
   </div>
 </template>
 
@@ -57,8 +63,7 @@ export default {
     return {
       // Define different pages for each checklist item
       pagesForPower: [
-        { text: "<p>La multiprise se trouve derrière l'ordinateur</p>", image: require('@/assets/img/powerstrip.jpeg') },
-        { text: "<p>Pour accéder au bouton: <br>enlever momentanément la prise de la table de mixage</p>" },
+        { text: "<p>Le bouton se trouve sur l'ordinateur</p>", image: require('@/assets/img/powerstrip.jpeg') },
       ],
       pagesForComputerBooted: [
         { text: "<p>Le bouton se trouve en haut au milieu de la façade avant</p>" },
@@ -86,11 +91,24 @@ export default {
       pagesForCameraOther: [
         { text: "<p>Un câble mini HDMI avec un raccord pré-installé est disponible sous la table de régie au besoin.</p>", image: require('@/assets/img/cable_mini_hdmi.jpeg') },
       ],
+      pagesForMicEquip: [
+        { text: "<p>Faire passer le micro sous le T-Shirt.<br>Attacher à environ 15cm sous la bouche.</p>" },
+      ],
+      pagesForReceiverPower: [
+        { text: "<p>Brancher le câble jack avec la lettre qui correspond.</p>", image:require('@/assets/img/receiver_power.jpeg') },
+        { text: "<p>Appuyer longuement sur le bouton jusqu'à ce que l'écran s'allume.</p>" }
+      ],
+      pagesForMixPower: [
+        { text: "<p>Si la table ne s'allume pas avec l'alimentation générale: le bouton se trouve à l'arrière sur le côté droit.</p>", image:require('@/assets/img/IMG_2287.jpeg')},
+      ],
+      pagesForMicPower: [
+        { text: "<p>Appuyer longuement sur le bouton jusqu'à ce que les 2 lumières s'allument</p>" },
+      ],
       pagesForStreamStart: [
         { text: "<p>Soit avec le bouton <code>Start live</code> sur le Streamdeck ou avec le bouton <code>Démarrer le stream</code> sur OBS</p>", image: require('@/assets/img/streamdeck_tools.png') },
       ],
       pagesForSceneChoice: [
-        { text: "<p>Utiliser le Streamdeck pour changer de scène.</p>", image: require('@/assets/img/streamdeck_scene.png') },
+        { text: "<p>Utiliser le Streamdeck pour changer de scène.</p>", image: require('@/assets/img/streamdeck_scene.png'), link: "/guides/streamdeck" },
       ],
     };
   },
